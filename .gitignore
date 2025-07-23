@@ -24,3 +24,4 @@ yarn-error.log*
 dist/
 bin/
 .env
+node_modules/

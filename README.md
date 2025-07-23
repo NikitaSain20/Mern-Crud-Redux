@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# 📦 MERN Stack CRUD App with Redux
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A full-stack CRUD (Create, Read, Update, Delete) application built with **MongoDB, Express, React, and Node.js**, and powered by **Redux** for efficient state management.
 
-## Available Scripts
+![App Screenshot](./c20148d9-93fc-41d6-bb7c-984fd08c2007.png)
+[alt text](image.png)
 
-In the project directory, you can run:
+---
 
-### `npm start`
+## 🚀 Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- 🔧 Add, update, delete items
+- 📋 Display items in a table
+- 💾 MongoDB integration for data persistence
+- ⚛️ React with Redux for predictable state management
+- 🎨 Responsive UI using Bootstrap
+- ⚙️ Express.js and Node.js backend
+- 🔁 Reusable and clean component architecture
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🧰 Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Frontend:**
 
-### `npm run build`
+- React.js
+- Redux
+- Bootstrap 5
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**Backend:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Node.js
+- Express.js
+- MongoDB (Mongoose)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 📂 Folder Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+root/
+├── client/ # React Frontend
+│ ├── src/
+│ │ ├── components/
+│ │ ├── redux/
+│ │ └── App.js
+├── server/ # Node.js Backend
+│ ├── routes/
+│ ├── models/
+│ └── server.js
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 🔧 Installation & Usage
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 1️⃣ Clone the repository
 
-## Learn More
+```bash
+git clone https://github.com/NikitaSain20/Mern-Crud-Redux.git
+cd Mern-Crud-Redux
+2️⃣ Install dependencies
+npm install
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+3️⃣ Setup environment
+Create a .env file in server/ and add your MongoDB URI:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+MONGO_URI=your_mongodb_connection_string
+PORT=5000
+4️⃣ Run the app
+Run backend
 
-### Code Splitting
+cd server
+npm start
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Run frontend
 
-### Analyzing the Bundle Size
+npm start
+The app will be available at:
+🔗 http://localhost:3000
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+🙋‍♀️ How to Use
+➕ Add Data: Fill in the form and click "Add" to store a new entry.
 
-### Making a Progressive Web App
+🔄 Update Data: Click "Edit", update the fields, and click "Update".
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+🗑️ Delete Data: Click "Delete" to remove an entry.
 
-### Advanced Configuration
+🔄 All changes are synced to MongoDB in real time.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+📸 Screenshot
 
-### Deployment
+💡 Author
+Made with ❤️ by Nikita Sain
+GitHub: @NikitaSain20
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+I
+```
