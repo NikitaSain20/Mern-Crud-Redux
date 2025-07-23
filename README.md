@@ -2,9 +2,6 @@
 
 A full-stack CRUD (Create, Read, Update, Delete) application built with **MongoDB, Express, React, and Node.js**, and powered by **Redux** for efficient state management.
 
-[Uploading image.png…]()
-
-
 ---
 
 ## 🚀 Features
@@ -54,7 +51,6 @@ root/
 
 ### 1️⃣ Clone the repository
 
-```bash
 git clone https://github.com/NikitaSain20/Mern-Crud-Redux.git
 cd Mern-Crud-Redux
 2️⃣ Install dependencies
@@ -67,12 +63,10 @@ MONGO_URI=your_mongodb_connection_string
 PORT=5000
 4️⃣ Run the app
 Run backend
-
 cd server
 npm start
 
 Run frontend
-
 npm start
 The app will be available at:
 🔗 http://localhost:3000
@@ -93,6 +87,3 @@ Made with ❤️ by Nikita Sain
 GitHub: @NikitaSain20
 
 ---
-
-I
-```
