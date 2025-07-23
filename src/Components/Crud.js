@@ -20,11 +20,8 @@ export default function Crud() {
     fetchData();
   };
   const handleDelete = async (order) => {
-    // console.log("Deleting Order ID:", OrderId);
-    console.log(order._id);
-    console.log(id);
     try {
-      const response = await fetch(`${apiUrl}/deleteOrder/${id}`, {
+      const response = await fetch(`${apiUrl}/deleteOrder/${order._id}`, {
         method: "DELETE",
       });
       console.log(response);
@@ -108,106 +105,121 @@ export default function Crud() {
     fetchData();
   }, []);
   return (
-    <div>
-      <h1 className="text-danger text-center m-5"> BASIC CRUD OPERATION</h1>
-      <form className="w-100 mx-5 my-3 d-flex justify-content-center">
-        <div class="mb-3 mx-5">
-          <label for="exampleInputEmail1" class="form-label">
-            Item:
-          </label>
-          <input
-            type="text"
-            class="form-control"
-            id="exampleInputEmail1"
-            aria-describedby="emailHelp"
-            value={item}
-            onChange={(e) => {
-              setItem(e.target.value);
-            }}
-          />
+    <div
+      className="min-vh-100 py-5"
+      style={{
+        background: "linear-gradient(135deg, #f6d365 0%, #fda085 100%)",
+      }}
+    >
+      <div className="container">
+        <h1 className="text-center text-uppercase fw-bold text-white mb-5 shadow-sm">
+          Basic CRUD Operation
+        </h1>
+
+        <div className="card shadow-lg p-4 mb-5 rounded-4 bg-white">
+          <form className="row g-3 align-items-end justify-content-center">
+            <div className="col-md-3">
+              <label htmlFor="itemInput" className="form-label fw-semibold">
+                Item
+              </label>
+              <input
+                type="text"
+                className="form-control text-capitalize"
+                id="itemInput"
+                placeholder="Enter item name"
+                value={item}
+                onChange={(e) => setItem(e.target.value)}
+              />
+            </div>
+
+            <div className="col-md-3">
+              <label htmlFor="priceInput" className="form-label fw-semibold">
+                Price
+              </label>
+              <input
+                type="number"
+                className="form-control"
+                id="priceInput"
+                placeholder="Enter price"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+              />
+            </div>
+
+            <div className="col-md-3">
+              <label htmlFor="locationInput" className="form-label fw-semibold">
+                Location
+              </label>
+              <input
+                type="text"
+                className="form-control text-capitalize"
+                id="locationInput"
+                placeholder="Enter location"
+                value={location}
+                onChange={(e) => setlocation(e.target.value)}
+              />
+            </div>
+
+            <div className="col-md-2 text-center">
+              {updateState === false ? (
+                <button
+                  type="submit"
+                  className="btn btn-success w-100 px-3 py-2"
+                  onClick={handleOrder}
+                >
+                  Add
+                </button>
+              ) : (
+                <button
+                  className="btn btn-warning w-100 px-3 py-2"
+                  onClick={handleUpdate}
+                >
+                  Update
+                </button>
+              )}
+            </div>
+          </form>
         </div>
-        <div class="mb-3 mx-5">
-          <label for="exampleInputPassword1" class="form-label">
-            Price:
-          </label>
-          <input
-            type="tel"
-            class="form-control"
-            id="exampleInputPassword1"
-            value={price}
-            onChange={(e) => {
-              setPrice(e.target.value);
-            }}
-          />
-        </div>
-        <div class="mb-3 mx-5">
-          <label for="exampleInputPassword1" class="form-label">
-            Loaction:
-          </label>
-          <input
-            type="text"
-            class="form-control"
-            id="exampleInputPassword1"
-            value={location}
-            onChange={(e) => {
-              setlocation(e.target.value);
-            }}
-          />
-        </div>
-        {updateState === false ? (
-          <button
-            type="submit"
-            class="btn btn-success btn-sm m-4"
-            onClick={handleOrder}
-          >
-            ADD
-          </button>
-        ) : (
-          <button className="btn btn-warning btn-sm m-4" onClick={handleUpdate}>
-            UPDATE
-          </button>
-        )}
-      </form>
-      <div className="d-flex justify-content-center w-100">
-        <table class="table table-danger table-striped-columns w-75 text-center ms-5">
-          <thead>
-            <tr>
-              <th scope="col">Id</th>
-              <th scope="col">Item</th>
-              <th scope="col">Price</th>
-              <th scope="col">Location</th>
-              <th scope="col">Action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {state.order.map((order, index) => (
-              <tr key={order._id}>
-                <td>{index + 1}</td>
-                <td>{order.item}</td>
-                <td>{order.price}</td>
-                <td>{order.location}</td>
-                <td>
-                  <button
-                    className="btn btn-danger me-3"
-                    onClick={() => {
-                      handleDelete(order);
-                    }}
-                  >
-                    DELETE
-                  </button>
-                  <button
-                    className="btn btn-warning"
-                    onClick={() => {
-                      handleUpdateState(order);
-                    }}
-                  >
-                    UPDATE
-                  </button>
-                </td>
+
+        <div className="table-responsive">
+          <table className="table table-bordered table-striped table-hover align-middle text-center bg-white shadow-sm rounded-4">
+            <thead className="table-dark">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Item</th>
+                <th scope="col">Price</th>
+                <th scope="col">Location</th>
+                <th scope="col">Action</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {state.order.map((order, index) => (
+                <tr key={order._id}>
+                  <td>{index + 1}</td>
+                  <td className="text-capitalize">{order.item}</td>
+                  <td>{`Rs. ${order.price}`}</td>
+                  <td className="text-capitalize">{order.location}</td>
+                  <td>
+                    <div className="d-flex justify-content-center gap-2 flex-wrap">
+                      <button
+                        className="btn btn-danger btn-sm"
+                        onClick={() => handleDelete(order)}
+                      >
+                        Delete
+                      </button>
+                      <button
+                        className="btn btn-warning btn-sm"
+                        onClick={() => handleUpdateState(order)}
+                      >
+                        Update
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
