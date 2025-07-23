@@ -80,8 +80,6 @@ The app will be available at:
 
 🔄 All changes are synced to MongoDB in real time.
 
-📸 Screenshot
-
 💡 Author
 Made with ❤️ by Nikita Sain
 GitHub: @NikitaSain20
