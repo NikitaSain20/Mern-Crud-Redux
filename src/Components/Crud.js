@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useState } from "react";
 import { CrudContext } from "./ContextReducer";
 import { apiUrl } from "../App";
 export default function Crud() {
-  console.log(apiUrl);
   const [item, setItem] = useState("");
   const [price, setPrice] = useState("");
   const [location, setlocation] = useState("");
