@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const app = express();
 const PORT = process.env.PORT || 5000;
 const userRouter = require("./routes/crud");
-if (!process.env.mongoURL) {
+if (!process.env.MONGO_URL) {
   console.error("Error: mongoURL is not defined in .env file");
   process.exit(1);
 }
