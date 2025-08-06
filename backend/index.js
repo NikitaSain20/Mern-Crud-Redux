@@ -9,10 +9,11 @@ if (!process.env.mongoURL) {
   process.exit(1);
 }
 mongoose
-  .connect(process.env.mongoURL)
+  .connect(process.env.MONGO_URL)
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error(err));
 const cors = require("cors");
+console.log("Frontend Origin: ", process.env.FRONTEND_URL);
 
 app.use(
   cors({
