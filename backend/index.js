@@ -13,7 +13,6 @@ mongoose
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.error(err));
 const cors = require("cors");
-console.log("Frontend Origin: ", process.env.FRONTEND_URL);
 
 app.use(
   cors({
