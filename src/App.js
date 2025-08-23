@@ -4,7 +4,6 @@ import ContextReducer from "./Components/ContextReducer";
 // import { useState } from "react";
 export const apiUrl = process.env.REACT_APP_API_URL;
 function App() {
-  console.log(apiUrl, "api");
   return (
     <>
       <ContextReducer>

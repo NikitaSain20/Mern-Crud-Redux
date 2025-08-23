@@ -1,6 +1,5 @@
 const Order = require("../Model/crud");
 
-// creation of the order
 const addOrder = async (req, res) => {
   try {
     let created_order = await Order.create({
@@ -8,17 +7,14 @@ const addOrder = async (req, res) => {
       price: req.body.price,
       location: req.body.location,
     });
-    console.log(created_order);
     return res.status(200).json({ success: "true", created_order });
   } catch (err) {
     return res.status(400).json({ success: "false", err });
   }
 };
 
-// getting the data in the frontend
 const showOrder = async (req, res) => {
   let allOrders = await Order.find({});
-  // console.log("type of orders:", typeof allOrders);
   try {
     if (allOrders) {
       return res.status(200).json({ success: "true", allOrders });
@@ -28,11 +24,8 @@ const showOrder = async (req, res) => {
   }
 };
 
-// deleting the order
-
 const deleteOrder = async (req, res) => {
   try {
-    console.log("request recieved");
     const deletedOrder = await Order.findByIdAndDelete(req.params.id);
     if (!deletedOrder) {
       return res

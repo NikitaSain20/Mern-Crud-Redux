@@ -24,9 +24,7 @@ export default function Crud() {
       const response = await fetch(`${apiUrl}/deleteOrder/${order._id}`, {
         method: "DELETE",
       });
-      console.log(response);
       if (response.ok) {
-        console.log("deleted successfully");
         dispatch({
           type: "DELETE",
           payload: id,
@@ -61,7 +59,7 @@ export default function Crud() {
       }),
     });
     if (response.ok) {
-      console.log("Updated data successfully!!");
+      ("Updated data successfully!!");
       if (id !== null && item && price && location) {
         dispatch({ type: "UPDATE", payload: { id, item, price, location } });
       }
